@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Получение данных из строки браузера</title>
+</head>
+<body>
+
+<h1>Данные из строки браузера:</h1>
+<div id="output"></div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    let outputDiv = document.getElementById('output');
+
+    // Получаем значение параметра "name"
+    let idUserValue = params.get('id_user');
+    if(idUserValue !== null){
+        outputDiv.innerHTML += `<p>ID User: ${idUserValue}</p>`;
+    }
+
+    // Получаем значение параметра "age"
+    let passwordValue = params.get('password');
+    if(passwordValue !== null){
+        outputDiv.innerHTML += `<p>Password: ${passwordValue}</p>`;
+    }
+</script>
+
+</body>
+</html>
