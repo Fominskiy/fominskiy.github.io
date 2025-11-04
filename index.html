@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript Redirect</title>
+    <title>Редирект в MemeClicker</title>
 </head>
 <body>
-    <script type="text/javascript">
-        window.location.href = "http://a90450qb.beget.tech/game/";
-    </script>
-</body>
-</html>
+
+<div id="output"></div>
+
+<script type="text/javascript">
+    const params = new URLSearchParams(window.location.search);
+
+    let outputDiv = document.getElementById('output');
+
+    let idUserValue = params.get('id_user');
+    if(idUserValue !== null){
+        outputDiv.innerHTML += `<p>ID User: ${idUserValue}</p>`;
+    }
+
+    let passwordValue = params.get('password');
+    if(passwordValue !== null){
+        outputDiv.innerHTML += `<p>Password: ${passwordValue}</p>`;
+    }
+	window.location.href = `http://a90450qb.beget.tech/game/?${idUserValue}?${passwordValue}`;
+</script>
