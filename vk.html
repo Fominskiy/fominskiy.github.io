@@ -13,14 +13,5 @@
 
     let outputDiv = document.getElementById('output');
 
-    let idUserValue = params.get('id_user');
-    if(idUserValue !== null){
-        outputDiv.innerHTML += `<p>ID User: ${idUserValue}</p>`;
-    }
-
-    let passwordValue = params.get('password');
-    if(passwordValue !== null){
-        outputDiv.innerHTML += `<p>Password: ${passwordValue}</p>`;
-    }
-	window.location.href = `http://a90450qb.beget.tech/game1.0.1.1/?${idUserValue}?${passwordValue}`;
+	window.location.href = `http://a90450qb.beget.tech/game1.0.1.1/`;
 </script>
